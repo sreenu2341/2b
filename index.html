@@ -1,9 +1,40 @@
-import React, { useState } from 'react';
-function CounterButtonFunc() {
-const [count, setCount] = useState(0);
-return (
-<button onClick={() => setCount(count + 1)}> Count: {count}
-</button>
-);
-}
-export default CounterButtonFunc;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Counter</title>
+  
+  <!-- React and ReactDOM CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
+  <!-- Babel CDN for compiling JSX directly in the browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- Root element where React mounts -->
+  <div id="root"></div>
+
+  <!-- React Code with fixed JSX syntax -->
+  <script type="text/babel">
+    const { useState } = React;
+
+    function CounterButtonFunc() {
+      const [count, setCount] = useState(0);
+
+      return (
+        <button onClick={() => setCount(count + 1)}>
+          Count: {count}
+        </button>
+      );
+    }
+
+    // Mount the component to the DOM
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<CounterButtonFunc />);
+  </script>
+
+</body>
+</html>
