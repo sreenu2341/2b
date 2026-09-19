@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterButtonFunc from './CounterButtonFunc.js';
+import CounterButtonFunc from './CounterButtonFunc.jsx';
 
 function App() {
   return React.createElement(
